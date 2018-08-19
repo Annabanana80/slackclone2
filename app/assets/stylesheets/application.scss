@@ -1,0 +1,88 @@
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+.unread {
+	margin-top: 50px;
+	display: flex;
+	font-weight: bold;
+	color: red;
+	
+}
+.unread:before, .unread:after{
+  color:red;
+  content:'';
+  flex:1;
+  border-bottom:groove 2px;
+  margin:auto 0.25em;
+  box-shadow: 0 -1px ;/* ou 0 1px si border-style:ridge */
+}
+body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+nav{
+  background-color: #100B3E;
+}
+.breaking{
+  max-width: 100%;
+  word-wrap: break-word;
+}
+.footer{
+  position: fixed;
+  bottom:0;
+  width: 73.429%;
+  background-color: white;
+}
+a{
+  color: #212121;
+}
+div.col.s9.push-s3, div.col.s3{
+  height:100%
+}
+div.col.s12.offset-m3{
+  margin-left:0px;
+}
+.homeImage{
+  position:relative;
+  text-align: center;
+  color:white;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #100B3E;
+  padding: 30px;
+  opacity: 0.75;
+  outline: 1px solid oldlace;
+  outline-offset: -20px;
+}
+.brand-logo{
+  color: oldlace !important;
+}
+nav ul a {
+  color: oldlace !important;
+}
+.dropdown-content li>a{
+  color: black !important;
+}
+#notice{
+  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+}
+.row{
+  margin-bottom: 0px !important;
+}
+.labels{
+  background-color: #6537C1;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  color: white;
+}
+.btn{
+  background-color: #6537C1 !important;
+}
+tbody > tr:nth-child(odd){
+  background-color: #ECE6F6 !important;
+}

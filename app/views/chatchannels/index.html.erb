@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<%if user_signed_in? %>
+<h4>All Channels</h4>
+
+<table class="striped">
+  <thead>
+    <tr>
+      <!-- <th>Name</th>
+      <th colspan="3"></th> -->
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @chatchannels.each do |chatchannel| %>
+      
+      <tr>
+        <td><%= chatchannel.name %></td>
+        <td><%= link_to 'Go!', chatchannel %></td>
+        <td><%= link_to 'Edit', edit_chatchannel_path(chatchannel) %></td>
+        <td><%= link_to 'Delete', chatchannel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Join", chatchannel_chatchannel_users_path(chatchannel), method: :post %></td>
+        <td><%= link_to "Leave", chatchannel_chatchannel_users_path(chatchannel), method: :delete %></td>
+        <% end %>
+        <%else%>
+    <div class="homeImage">
+        <img src="https://i.imgur.com/sLMBTom.jpg?2" alt="Piecaken" style="width:100%; filter:blur(2px); height: 95vh;">
+          <div class="centered">
+            <strong><h1>~Slick~</h1></strong>
+            <p>A chat platform</p>
+            <!-- <p>Log in or sign up to see your channels and who is online!</p> -->
+          </div>
+          
+      </div>
+
+    
+    <%end%>
+  </tbody>
+</table>
+
+<br>
+<%if user_signed_in? %>
+<%= link_to 'Create a New Channel', new_chatchannel_path, :class=>"waves-effect waves-light btn"%>
+
+<%end%>
