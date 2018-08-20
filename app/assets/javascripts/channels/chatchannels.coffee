@@ -20,7 +20,7 @@ App.chatchannels = App.cable.subscriptions.create "ChatchannelsChannel",
         App.last_read.update(data.chatchannel_id)
 
       # Insert the message
-      active_chatchannel.append("<div class='breaking'><div class='chip'>#{data.username}:</div>#{data.body}</div>")
+      active_chatchannel.append("<div class='breaking'><div class='chip'><img src=#{data.image}/> #{data.username}:</div>#{data.body}</div>")
 
     else
       $("[data-behavior='chatchannel-link'][data-chatchannel-id='#{data.chatchannel_id}']").css("font-weight", "bold")

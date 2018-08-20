@@ -1,5 +1,6 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "emojionearea.min";
 .unread {
 	margin-top: 50px;
 	display: flex;
@@ -64,7 +65,7 @@ nav ul a {
   color: oldlace !important;
 }
 .dropdown-content li>a{
-  color: black !important;
+  color: #100B3E !important;
 }
 #notice{
   margin-bottom: 0px !important;
@@ -83,6 +84,6 @@ nav ul a {
 .btn{
   background-color: #6537C1 !important;
 }
-tbody > tr:nth-child(odd){
+tbody > tr:nth-child(odd), , .chip{
   background-color: #ECE6F6 !important;
 }

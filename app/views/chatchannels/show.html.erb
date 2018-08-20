@@ -4,7 +4,7 @@
   <strong>Current Channel:</strong> <%= @chatchannel.name %>  
 </h4>
 <% unread_messages = false %>
-<div data-behavior='messages' data-chatchannel-id='<%= @chatchannel.id %>' style="margin-bottom: 80px;">
+<div data-behavior='messages' data-chatchannel-id='<%= @chatchannel.id %>' style="margin-bottom: 150px;">
 	  <% @messages.each do |message| %>
     <% if !unread_messages && @chatchannel_user.last_read_at < message.created_at %>
       <% unread_messages = true %>
@@ -15,11 +15,9 @@
 	<% end %>
 </div>
 <div class="footer">
-  
-  <%= form_for [@chatchannel, Message.new] do |f|%>
-  	<%= f.text_area :body, class: "form-control", autofocus: true%>
-  <% end %>
-          
+    <%= form_for [@chatchannel, Message.new] do |f|%>
+    	<%= f.text_area :body, class: "form-control emojionearea", autofocus: true%>
+     <%end%>   
   <%= link_to 'Edit', edit_chatchannel_path(@chatchannel) %> |
   <%= link_to 'Home', chatchannels_path %>
 </div>

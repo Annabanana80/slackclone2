@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require emojionearea_init
+//= require chatchannels
+//= require emojionearea.min
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets

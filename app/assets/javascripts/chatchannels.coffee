@@ -6,12 +6,8 @@ handleUserViews = ->
       $unread.remove()
 
 $(document).on "turbolinks:load", ->
-  $(document).on "click", handleUserViews
 
-  $("#new_message").on "keypress", (e) ->
-    if e && e.keyCode == 13
-      e.preventDefault()
-      $(this).submit()
+  $(document).on "click", handleUserViews
 
   $("#new_message").on "submit", (e) ->
     e.preventDefault()
@@ -26,5 +22,6 @@ $(document).on "turbolinks:load", ->
 
   $(".dropdown-trigger").dropdown();  
   $('.modal').modal();
+
 
   
