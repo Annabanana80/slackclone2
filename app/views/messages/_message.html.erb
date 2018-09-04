@@ -3,5 +3,13 @@
 	<div class="chip">
 		<%=image_tag(message.user.image_url(:thumb), :class=>"circle", size: "20x20")%>
 		<%= message.user.username %>:
-	</div><%=sanitize gemojify(message.body)%></div>
+		
+	</div>
+
+	<%=sanitize gemojify(message.body)%>
+  	<%if message.attachment? %>
+	<%= image_tag(@message.attachment.image_url, alt: 'Image') %>
+	<%end%>
+
+</div>
 

@@ -18,7 +18,10 @@ $(document).on "turbolinks:load", ->
     App.chatchannels.send_message(chatchannel_id, body.val())
 
     body.val("")
-
+  $("#uploadBtn").on "click", (e) ->
+    e.preventDefault()
+    
+    console.log("i'm clicked")
 
   $(".dropdown-trigger").dropdown();  
   $('.modal').modal();

@@ -17,7 +17,9 @@
 <div class="footer">
     <%= form_for [@chatchannel, Message.new] do |f|%>
     	<%= f.text_area :body, class: "form-control emojionearea", autofocus: true%>
-     <%end%>   
+   
+     <%end%>
+
   <%= link_to 'Edit', edit_chatchannel_path(@chatchannel) %> |
   <%= link_to 'Home', chatchannels_path %>
 </div>

@@ -22,6 +22,12 @@
               <%= f.email_field :email, autofocus: true, required: true %>
               <%= f.label :email %>
             </div>
+            <div class="file-field input-field">
+              <%= f.label :image do %>
+                <%= f.file_field :image %>
+                <%= f.hidden_field :image_cache %>
+              <% end %>
+            </div>
             <div class="input-field col s12">
               <i class="material-icons prefix">lock</i>
               <%= f.password_field :password, autocomplete: "off", required: true %>
@@ -36,12 +42,7 @@
               <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
               <%= f.label :password_confirmation %>
             </div>
-            <div class="file-field input-field">
-              <%= f.label :image do %>
-                <%= f.file_field :image %>
-                <%= f.hidden_field :image_cache %>
-              <% end %>
-            </div>
+
           </div>
           <div class="form-actions center">
             <%= f.submit "Sign Up", class: "btn waves-effect" %>

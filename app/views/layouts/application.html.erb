@@ -51,8 +51,16 @@
           <h5 class="labels z-depth-2">Who's Online</h5>
           <ul>
             <% (User.all - [current_user]).each do |user| %>
-            <li><%= image_tag(user.image_url(:thumb), :class=>"circle", size: "50x50")%><strong><%=link_to user.username, direct_message_path(user.id), :class=>"users", data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %>
-              </strong>
+            <li>
+                  <div class="row valign-wrapper">
+                    <div><%= image_tag(user.image_url(:thumb), :class=>"circle", size: "50x50")%>
+                    </div>
+                  <div>
+                    <span><strong><%=link_to user.username, direct_message_path(user.id), :class=>"users", data: {behavior: "chatchannel-link", chatchannel_id: Chatchannel.direct_message_for_users([current_user, user]).id } %>
+              </strong></span>
+                  </div>
+              
+              </div>
             </li>
             <%end%>
           </ul>

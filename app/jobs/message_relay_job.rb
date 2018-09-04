@@ -6,7 +6,8 @@ class MessageRelayJob < ApplicationJob
     	image: message.user.image_url,
 		username: message.user.username,
       	body: message.body,
-      	chatchannel_id: message.chatchannel.id
+      	chatchannel_id: message.chatchannel.id,
+      	
     }
   end
 end
