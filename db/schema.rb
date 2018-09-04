@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20180827033123) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chatchannel_users", force: :cascade do |t|
     t.integer  "chatchannel_id"
     t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.datetime "last_read_at"
-    t.index ["chatchannel_id"], name: "index_chatchannel_users_on_chatchannel_id"
-    t.index ["user_id"], name: "index_chatchannel_users_on_user_id"
+    t.index ["chatchannel_id"], name: "index_chatchannel_users_on_chatchannel_id", using: :btree
+    t.index ["user_id"], name: "index_chatchannel_users_on_user_id", using: :btree
   end
 
   create_table "chatchannels", force: :cascade do |t|
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20180827033123) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "attachment"
-    t.index ["chatchannel_id"], name: "index_messages_on_chatchannel_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["chatchannel_id"], name: "index_messages_on_chatchannel_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,8 +62,8 @@ ActiveRecord::Schema.define(version: 20180827033123) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "image"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
