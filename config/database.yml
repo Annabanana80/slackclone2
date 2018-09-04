@@ -6,7 +6,7 @@ default: &default
 
 development:
   adapter: postgresql
-  database: my_database_development
+  database: db/development.postgresql
   pool: 5
   timeout: 5000
 test:
