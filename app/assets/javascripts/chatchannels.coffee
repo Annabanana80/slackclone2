@@ -6,7 +6,10 @@ handleUserViews = ->
       $unread.remove()
 
 $(document).on "turbolinks:load", ->
-
+  $('.sidenav').sideNav();
+  $('.button-collapse').sideNav('show');
+  
+  $('.button-collapse').sideNav('hide');
   $(document).on "click", handleUserViews
 
   $("#new_message").on "submit", (e) ->
@@ -25,6 +28,3 @@ $(document).on "turbolinks:load", ->
 
   $(".dropdown-trigger").dropdown();  
   $('.modal').modal();
-
-
-  

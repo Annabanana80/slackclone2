@@ -11,15 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require materialize-sprockets
 //= require emojionearea_init
 //= require chatchannels
 //= require emojionearea.min
 //= require jquery_ujs
 //= require turbolinks
-//= require materialize-sprockets
 //= require_tree .
 //= require materialize
-
 
 
 	

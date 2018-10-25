@@ -18,7 +18,7 @@
 	      <%= link_to root_path, class: "brand-logo" do %>
 		      	~Slick~
 		   <% end %>
-	      <ul class="right hide-on-med-and-down">
+	      <ul class="right">
 	      	<%if user_signed_in? %>
             <%= yield :right_nav %>
                 <li style="margin-top:7px;"><%= image_tag(current_user.image_url(:thumb), :class=>"circle", size: "50x50")%></li>
@@ -37,6 +37,7 @@
 	    </div>
     </nav>
   </div>  
+  
     <!-- Page Layout here -->
     <main>
       <div class="row">
